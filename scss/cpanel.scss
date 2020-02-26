@@ -1,0 +1,202 @@
+@import 'base';
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    .brand {
+        width: 100%;
+        h1 {
+            font-family: 'Fjalla One', sans-serif;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            font-size: 80px;
+            color: $r;
+        }
+    }
+    .container-fluid {
+        font-family: 'Nunito Sans', sans-serif;
+        width: 80%;
+        flex-wrap: wrap;
+        .manager {
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            background-color: $r;
+            color: $w;
+            width: 48%;
+            height: 300px;
+            transition: all 0.3s ease;
+            @extend %inline;
+            .fas {
+                float: left;
+                margin-left: 10%;
+                line-height: 300px;
+                font-size: 70px;
+            }
+            h2 {
+                float: right;
+                margin-right: 10%;
+                line-height: 300px;
+                font-size: 50px;
+                @extend %space;
+                @extend %inline;
+            }
+        }
+        .manager:hover {
+            cursor: pointer;
+        }
+        .grow {
+            background-color: $w;
+            color: $r;
+            border: 1px solid $r;
+            width: 49%;
+            height: 320px;
+        }
+        .next {
+            width: 47%;
+            height: 320px;
+        }
+        .shrink {
+            width: 48%;
+            height: 280px;
+        }
+        .alt-managers {
+            display: none;
+        }
+    }
+    .panel {
+        background-color: $r;
+        color: $w;
+        height: 500px;
+        padding-top: 50px;
+        padding-left: 5%;
+        button {
+            @extend %panel;
+            transition: all 0.3s ease;
+            &:hover {
+                @extend %panel_hover;
+            }
+        }
+        .tabel {
+            @extend %table;
+            table {
+                width: 100%;
+                line-height: 50px;
+                font-weight: normal;
+                a {
+                    transition: all 0.3s ease;
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                    &:link {
+                        color: $w;
+                    }
+                    &:visited {
+                        color: $w;
+                    }
+                }
+                button {
+                    border: none;
+                    background: transparent;
+                    color: $w;
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+        .add {
+            padding-top: 10px;
+            margin-left: 10%;
+            border: 1px solid $w;
+            height: 300px;
+            b {
+                display: none;
+            }
+            .formulier {
+                background-color: $r;
+                text-align: center;
+                input {
+                    margin-bottom: 10px;
+                }
+                button {
+                    margin-top: 20px;
+                }
+            }
+        }
+        .back {
+            position: absolute;
+            margin-top: 375px;
+        }
+    }
+    .edit {
+        form {
+            width: 35%;
+            height: 300px;
+            input {
+                width: 100%;
+            }
+        }
+    }
+    .calendar {
+        width: 100% !important;
+        height: 95vh;
+    }
+    .logoutbutton {
+        width: 100%;
+        border: none;
+        background: transparent;
+        @extend %inline;
+        color: $w;
+        &:hover {
+            color: $r;
+        }
+    }
+    .formulier {
+        a {
+            font-size: 130px;
+            &:link {
+                color: $w;
+            }
+            &:visited {
+                color: $w;
+            }
+        }
+    }
+    span.textbox {
+	    background-color: #FFF;
+	    color: #888;
+	    line-height: 20px;
+	    height: 20px;
+	    padding: 3px;
+	    border: 1px #888 solid;
+	    font-size: 12pt;
+    }
+    span.textbox input {
+        border: 0px;
+	    background-color: #FFF;
+    }
+    .productadd {
+        h2 {
+            text-align: center;
+        }
+        input:nth-child(1) {
+            width: 45%;
+        }
+        select {
+            width: 45%;
+        }
+        textarea {
+            width: 90.5%;
+        }
+    }
+    .add-product {
+        margin-right: 10%;
+        float: right;
+    }
+}

@@ -1,0 +1,103 @@
+@import 'base';
+
+//sass --watch scss/style.scss:css/style.css --style compressed
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: $b;
+    color: $w;
+    .container-fluid {
+        width: 100%;
+        .header {
+            header {
+                height: 380px;
+                background-image: url('../media/masami_sushi_banner3.png');
+                background-position: center;
+                background-size: cover;
+                .header-top {
+                    .logo {
+                        img {
+                            max-height: 95px;
+                            min-height: 95px;
+                        }
+                    }
+                    .franchise {
+                        font-size: 55px;
+                        float: right;
+                        margin-top: -75px;
+                        color: $gr;
+                    }
+                }
+                .header-middle {
+                    margin-top: 120px;
+                    color: $w;
+                    h1 {
+                        font-size: 20px;
+                    }
+                    h2 {
+                        font-size: 30px;
+                    }
+                    span {
+                        color: $r;
+                    }
+                    .top-right {
+                        text-align: right;
+                    }
+                }
+                .header-nav {
+                    position: absolute;
+                    width: 100%;
+                    backdrop-filter: blur(10px);
+                    -webkit-box-shadow: 0px -2px 5px 0px rgba(121, 121, 121, 0.45);
+                    -moz-box-shadow: 0px -2px 5px 0px rgba(121, 121, 121, 0.45);
+                    box-shadow: 0px -2px 5px 0px rgba(121, 121, 121, 0.45);
+                    nav {
+                        ul {
+                            display: flex;
+                            @extend %space;
+                            li:nth-child(1) {
+                                border-left: 1px solid $gr;
+                            }
+                            li {
+                                background-color: #0000006e;
+                                font-size: 20px;
+                                color: $gr;
+                                width: 23%;
+                                height: 114px;
+                                @extend %uc;
+                                border-right: 1px solid $gr;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                transition: all 0.3s ease;
+                                &:hover {
+                                    cursor: pointer;
+                                    color: $w;
+                                    background-color: rgba(65, 12, 14, 0.472);
+                                }
+                            }
+                            .active-page {
+                                background-color: $r !important;
+                                color: $w;
+                            }
+                        }
+                    }
+                    .opening-status {
+                        height: 114px;
+                        background-color: $r;
+                        @extend %uc;
+                        span {
+                            font-size: 30px;
+                        }
+                        .takeaway {
+                            width: 45%;
+                            margin-right: 5%;
+                            border-right: 1px solid $w;
+                            height: 70px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
