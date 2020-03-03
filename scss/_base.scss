@@ -21,6 +21,9 @@ $gr: #4D4D4D;
     overflow-y: scroll;
     border: 1px solid $w;
 }
+%lst {
+    list-style-type: none;
+}
 // Buttons
 %panel {
     border: 1px solid $w;

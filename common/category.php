@@ -3,7 +3,7 @@
 
     if (isset($_SESSION["category"])) {
         if(isset($_POST["vipboxen"])) {
-            $category = "'vip boxen'";
+            $category = "'vipboxen'";
         } else if(isset($_POST["appetizers"])) {
             $category = "'appetizers'";
         } else if(isset($_POST["nigiri"])) {
@@ -27,7 +27,7 @@
         } else if(isset($_POST["dranken"])) {
             $category = "'dranken'";
         } else {
-            $category = "'vip boxen'";
+            $category = "'vipboxen'";
         }
     }
 ?>

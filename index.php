@@ -17,22 +17,27 @@
         <div class="row header">
             <?php require('header.php'); ?>
         </div>
-        <form method="post" action="">
-            <ul>
-                <li><button type="submit" name="vipboxen">Vip Boxen</button></li>
-                <li><button type="submit" name="appetizers">Appetizers</button></li>
-                <li><button type="submit" name="nigiri">Nigiri</button></li>
-                <li><button type="submit" name="hosomaki">Hosomaki</button></li>
-                <li><button type="submit" name="softshell">Soft Shell rolls</button></li>
-                <li><button type="submit" name="temaki">Temaki handroll</button></li>
-                <li><button type="submit" name="uramaki">Uramaki</button></li>
-                <li><button type="submit" name="outsidecrispyrolls">Outside Crispy rolls</button></li>
-                <li><button type="submit" name="friedcrispyrolls">Fried Crispy rolls</button></li>
-                <li><button type="submit" name="pokebowls">Poke Bowls</button></li>
-                <li><button type="submit" name="sashimi">Sashimi</button></li>
-                <li><button type="submit" name="dranken">Dranken</button></li>
-                </u>
-        </form>
+        <div class="row categories">
+            <div class="col-lg-12 col-md-12">
+                <form method="post" action="">
+                    <ul>
+                        <li><h2>Categorieën:</h2></li>
+                        <li><button type="submit" name="vipboxen">Vip Boxen</button></li>
+                        <li><button type="submit" name="appetizers">Appetizers</button></li>
+                        <li><button type="submit" name="nigiri">Nigiri</button></li>
+                        <li><button type="submit" name="hosomaki">Hosomaki</button></li>
+                        <li><button type="submit" name="softshell">Soft Shell rolls</button></li>
+                        <li><button type="submit" name="temaki">Temaki handroll</button></li>
+                        <li><button type="submit" name="uramaki">Uramaki</button></li>
+                        <li><button type="submit" name="outsidecrispyrolls">Outside Crispy rolls</button></li>
+                        <li><button type="submit" name="friedcrispyrolls">Fried Crispy rolls</button></li>
+                        <li><button type="submit" name="pokebowls">Poke Bowls</button></li>
+                        <li><button type="submit" name="sashimi">Sashimi</button></li>
+                        <li><button type="submit" name="dranken">Dranken</button></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
         <?php
         $sql = "SELECT * FROM product WHERE category=" . $category;
         $result = $conn->query($sql);

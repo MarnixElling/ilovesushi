@@ -86,6 +86,8 @@ body {
                         height: 114px;
                         background-color: $r;
                         @extend %uc;
+                        border-bottom: 1px solid $w;
+                        border-top: 1px solid $w;
                         span {
                             font-size: 30px;
                         }
@@ -96,6 +98,38 @@ body {
                             height: 70px;
                         }
                     }
+                }
+            }
+        }
+        .categories {
+            background-color: $r;
+            ul {
+                @extend %lst;
+                @extend %space;
+                li {
+                    @extend %inline;
+                    height: 40px;
+                    &:nth-child(1){
+                        &:after {
+                            content: '';
+                        }
+                    }
+                    &:after {
+                        content: '-';
+                    }
+                    button {
+                        border: none;
+                        background: transparent;
+                        color: $w;
+                    }
+                    h2 {
+                        @extend %space;
+                        @extend %inline;
+                        font-size: 25px;
+                    }
+                }
+                .active-category {
+                    
                 }
             }
         }
