@@ -8,6 +8,9 @@ $gr: rgb(94, 94, 94);
 %uc {
     text-transform: uppercase;
 }
+%center {
+    text-align: center;
+}
 
 // Random globals
 %space {
@@ -24,6 +27,9 @@ $gr: rgb(94, 94, 94);
 }
 %lst {
     list-style-type: none;
+}
+%inputborder {
+    border: 1px solid $gr;
 }
 // Buttons
 %panel {

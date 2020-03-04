@@ -4,3 +4,4 @@
 <link rel="shortcut icon" type="image/x-icon" href="media/favicon.png">
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
