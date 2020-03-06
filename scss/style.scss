@@ -2,6 +2,12 @@
 
 //sass --watch scss/style.scss:css/style.css --style compressed
 
+@keyframes carthover {
+    0% {opacity: 1;}
+    50% {opacity:0.5;}
+    100% {opacity: 1;}
+}
+
 body {
     font-family: 'Oswald', sans-serif;
     background-color: $b;
@@ -121,6 +127,12 @@ body {
                         color: $w;
                         border: none;
                         background-color: $dg;
+                        transition: all 0.3s ease;
+                        &:hover {
+                            background-color: $lr;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                        }
                     }
                     .active-category {
                         background-color: $r;
@@ -129,6 +141,11 @@ body {
             }
             .product {
                 margin-bottom: 20px;
+                transition: all 0.3s ease;
+                &:hover {
+                    cursor: pointer;
+                    margin-top: -10px;
+                }
                 img {
                     width: 100%;
                 }
@@ -184,6 +201,9 @@ body {
                             color: $w;
                             font-size: 25px;
                             margin-left: 10%;
+                        }
+                        .cart-hover {
+                            animation: carthover 1s ease infinite;
                         }
                     }
                 }

@@ -35,20 +35,29 @@
         <div class="row content-middle">
             <div class="col-lg-2 col-md-2"></div>
             <div class="col-lg-1 col-md-1">
+                <?php
+                $categories = ['vipboxen', 'appetizers', 'nigiri', 'hosomaki', 'softshellrolls', 'temakihandroll', 'uramaki', 'outsidecrispyrolls', 'friedcrispyrolls', 'pokebowl', 'sashimi', 'dranken'];
+
+                foreach($categories as $ar ) {
+                    if ($ar == $categoryName) {
+                        $$ar = 'active-category';
+                    }
+                }
+                ?>
                 <form method="post" action="">
                     <ul>
-                        <li><button class="active-category" type="submit" name="vipboxen">Vip Boxen</button></li>
-                        <li><button class="" type="submit" name="appetizers">Appetizers</button></li>
-                        <li><button class="" type="submit" name="nigiri">Nigiri</button></li>
-                        <li><button class="" type="submit" name="hosomaki">Hosomaki</button></li>
-                        <li><button class="" type="submit" name="softshell">Soft Shell rolls</button></li>
-                        <li><button class="" type="submit" name="temaki">Temaki handroll</button></li>
-                        <li><button class="" type="submit" name="uramaki">Uramaki</button></li>
-                        <li><button class="" type="submit" name="outsidecrispyrolls">Outside Crispy rolls</button></li>
-                        <li><button class="" type="submit" name="friedcrispyrolls">Fried Crispy rolls</button></li>
-                        <li><button class="" type="submit" name="pokebowls">Poke Bowls</button></li>
-                        <li><button class="" type="submit" name="sashimi">Sashimi</button></li>
-                        <li><button class="" type="submit" name="dranken">Dranken</button></li>
+                        <li><button class="<?php echo $vipboxen; ?>" type="submit" name="vipboxen">Vip Boxen</button></li>
+                        <li><button class="<?php echo $appetizers; ?>" type="submit" name="appetizers">Appetizers</button></li>
+                        <li><button class="<?php echo $nigiri; ?>" type="submit" name="nigiri">Nigiri</button></li>
+                        <li><button class="<?php echo $hosomaki; ?>" type="submit" name="hosomaki">Hosomaki</button></li>
+                        <li><button class="<?php echo $softshellrolls; ?>" type="submit" name="softshell">Soft Shell rolls</button></li>
+                        <li><button class="<?php echo $temakihandroll; ?>" type="submit" name="temaki">Temaki handroll</button></li>
+                        <li><button class="<?php echo $uramaki; ?>" type="submit" name="uramaki">Uramaki</button></li>
+                        <li><button class="<?php echo $outsidecrispyrolls; ?>" type="submit" name="outsidecrispyrolls">Outside Crispy rolls</button></li>
+                        <li><button class="<?php echo $friedcrispyrolls; ?>" type="submit" name="friedcrispyrolls">Fried Crispy rolls</button></li>
+                        <li><button class="<?php echo $pokebowl; ?>" type="submit" name="pokebowls">Poke Bowls</button></li>
+                        <li><button class="<?php echo $sashimi; ?>" type="submit" name="sashimi">Sashimi</button></li>
+                        <li><button class="<?php echo $dranken; ?>" type="submit" name="dranken">Dranken</button></li>
                     </ul>
                 </form>
             </div>
