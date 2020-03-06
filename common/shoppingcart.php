@@ -30,7 +30,7 @@ if (isset($_GET["action"])) {
 		foreach ($_SESSION["shopping_cart"] as $keys => $values) {
 			if ($values["item_id"] == $_GET["id"]) {
 				unset($_SESSION["shopping_cart"][$keys]);
-				echo '<script>window.location="cart.php"</script>';
+				echo '<script>window.location="index.php"</script>';
 			}
 		}
 	}

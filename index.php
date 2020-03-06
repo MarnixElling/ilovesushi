@@ -9,6 +9,8 @@
     require('common/links.php');
     require('common/shoppingcart.php');
     require('common/category.php');
+
+    $shippingprice = 5;
     ?>
     <title>iLoveSushi Zeist</title>
 </head>
@@ -38,7 +40,7 @@
                 <?php
                 $categories = ['vipboxen', 'appetizers', 'nigiri', 'hosomaki', 'softshellrolls', 'temakihandroll', 'uramaki', 'outsidecrispyrolls', 'friedcrispyrolls', 'pokebowl', 'sashimi', 'dranken'];
 
-                foreach($categories as $ar ) {
+                foreach ($categories as $ar) {
                     if ($ar == $categoryName) {
                         $$ar = 'active-category';
                     }
@@ -68,7 +70,7 @@
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        ?>
+                    ?>
                         <div class="col-lg-4 col-md-4">
                             <div class="product">
                                 <img src="<?php echo $row['image']; ?>" alt="foto"><br>
@@ -89,12 +91,60 @@
                                 </div>
                             </div>
                         </div>
-                <?php
+                    <?php
                     }
                 } else {
                     echo "Sorry this product is sold out.";
                 }
                 ?>
+            </div>
+            <div class="colg-lg-2 col-md-2 cart">
+                <table>
+                    <tr>
+                        <td>Naam</td>
+                        <td>Aantal</td>
+                        <td>Prijs (x1)</td>
+                        <td>Totaal</td>
+                        <td></td>
+                    </tr>
+                    <?php
+                    if (!empty($_SESSION["shopping_cart"])) {
+                        $total = 0;
+                        foreach ($_SESSION["shopping_cart"] as $keys => $values) {
+                            ?>
+                            <tr>
+                                <td><?php echo $values["item_name"]; ?></td>
+                                <td class="quantity">x<?php echo $values["item_quantity"]; ?></td>
+                                <td>€ <?php echo $values["item_price"]; ?></td>
+                                <td>€ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
+                                <td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><i class="fas fa-times"></i></a></td>
+                            </tr>
+                            <?php
+                                $total = $total + ($values["item_quantity"] * $values["item_price"]) + 0.1 + $shippingprice;
+                            }
+                            ?>
+                        <tr class="extra">
+                            <td>Tasje</td>
+                            <td></td>
+                            <td></td>
+                            <td>+ € 0,10</td>
+                            <td></td>
+                        </tr>
+                        <tr class="alert alert-danger">
+                            <td colspan="3">Bezorgkosten verschilt per postcode!</td>
+                            <td>+ € 5,00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">Totaal</th>
+                            <th>€ <?php echo number_format($total, 2); ?></th>
+                            <td></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </table>
+                <button class="proceed-checkout">Afrekenen</button>
             </div>
         </div>
         <?php
