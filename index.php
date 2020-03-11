@@ -3,14 +3,22 @@
 <head>
     <?php
     session_start();
-    $_SESSION["category"] = "";
-    $category = $_SESSION["category"];
     require('common/connect.php');
     require('common/links.php');
-    require('common/shoppingcart.php');
     require('common/category.php');
+    require('common/shoppingcart.php');
 
-    $shippingprice = 5;
+    if(!isset($_SESSION['category'])) {
+        $_SESSION["category"] = "'vipboxen'";
+    } else {
+        $_SESSION["category"] = $category;
+    }
+
+    $curpage = 'index';
+    $home = 'active-page';
+    $order = '';
+    $about = '';
+    $contact = '';
     ?>
     <title>iLoveSushi Zeist</title>
 </head>
@@ -65,9 +73,8 @@
             </div>
             <div class="col-lg-5 col-md-5 d-flex flex-wrap">
                 <?php
-                $sql = "SELECT * FROM product WHERE category=" . $category;
+                $sql = "SELECT * FROM product WHERE category=" . $_SESSION['category'];
                 $result = $conn->query($sql);
-
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                     ?>
@@ -85,6 +92,7 @@
                                             <button class="plus">+</button>
                                             <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>">
                                             <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>">
+                                            <input type="hidden" name="current-category" value="<?php echo $category; ?>">
                                             <button class="add-to-cart" type="submit" name="add_to_cart"><i class="fas fa-cart-plus"></i></button>
                                         </div>
                                     </form>
@@ -99,52 +107,8 @@
                 ?>
             </div>
             <div class="colg-lg-2 col-md-2 cart">
-                <table>
-                    <tr>
-                        <td>Naam</td>
-                        <td>Aantal</td>
-                        <td>Prijs (x1)</td>
-                        <td>Totaal</td>
-                        <td></td>
-                    </tr>
-                    <?php
-                    if (!empty($_SESSION["shopping_cart"])) {
-                        $total = 0;
-                        foreach ($_SESSION["shopping_cart"] as $keys => $values) {
-                            ?>
-                            <tr>
-                                <td><?php echo $values["item_name"]; ?></td>
-                                <td class="quantity">x<?php echo $values["item_quantity"]; ?></td>
-                                <td>€ <?php echo $values["item_price"]; ?></td>
-                                <td>€ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
-                                <td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><i class="fas fa-times"></i></a></td>
-                            </tr>
-                            <?php
-                                $total = $total + ($values["item_quantity"] * $values["item_price"]) + 0.1 + $shippingprice;
-                            }
-                            ?>
-                        <tr class="extra">
-                            <td>Tasje</td>
-                            <td></td>
-                            <td></td>
-                            <td>+ € 0,10</td>
-                            <td></td>
-                        </tr>
-                        <tr class="alert alert-danger">
-                            <td colspan="3">Bezorgkosten verschilt per postcode!</td>
-                            <td>+ € 5,00</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th colspan="3">Totaal</th>
-                            <th>€ <?php echo number_format($total, 2); ?></th>
-                            <td></td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </table>
-                <button class="proceed-checkout">Afrekenen</button>
+                <?php require('common/cart.php'); ?>
+                <button onclick="window.location.href = 'checkout.php';" class="proceed-checkout">Afrekenen</button>
             </div>
         </div>
         <?php

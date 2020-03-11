@@ -12,7 +12,7 @@ if (strlen($_POST['available'] !== 0) && is_numeric($_POST['postcode'])){
         } else if($gebr_postcode == $postcode && $extra_kosten == 0){
             $result = 'succes';
         } else {
-            $result = 'je kanker ma';
+            $result = 'no succes';
         }
     }
     echo $result;

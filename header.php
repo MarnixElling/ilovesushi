@@ -40,7 +40,7 @@ if($curdate == $monday || $curdate == $tuesday || $curdate == $wednesday) { // K
         <div class="col-lg-2 col-md-2"></div>
         <div class="col-lg-8 col-md-8">
             <div class="logo">
-                <img src="media/logo.png" alt="I Love Sushi">
+                <a href="index.php"><img src="media/logo.png" alt="I Love Sushi"></a>
             </div>
             <div class="franchise">ZEIST</div>
         </div>
@@ -62,10 +62,10 @@ if($curdate == $monday || $curdate == $tuesday || $curdate == $wednesday) { // K
         <div class="col-lg-4 col-md-4">
             <nav>
                 <ul>
-                    <li class="active-page">home</li>
-                    <li>bestellen</li>
-                    <li>over ons</li>
-                    <li>contact</li>
+                    <li class="<?php echo $home ?>">home</li>
+                    <li class="<?php echo $order ?>">bestellen</li>
+                    <li class="<?php echo $about ?>">over ons</li>
+                    <li class="<?php echo $contact ?>">contact</li>
                 </ul>
             </nav>
         </div>
