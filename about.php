@@ -11,7 +11,7 @@
         $_SESSION["category"] = $category;
     }
 
-    $curpage = 'index';
+
     $home = '';
     $order = '';
     $about = 'active-page';
