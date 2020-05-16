@@ -27,7 +27,7 @@
         <div class="row header">
             <?php require('header.php'); ?>
         </div>
-        <div class="row content-top scroll">
+        <div class="row content-top order-page">
             <div class="col-lg-2 col-md-2">
                 <!-- leftside -->
             </div>
@@ -42,9 +42,9 @@
                 <!-- rightside -->
             </div>
         </div>
-        <div class="row content-middle">
-            <div class="col-lg-2 col-md-2 scroll3"></div>
-            <div class="col-lg-1 col-md-1 scroll2">
+        <div class="row content-middle order-page">
+            <div class="col-lg-2 col-md-2"></div>
+            <div class="col-lg-1 col-md-1">
                 <?php
                 $categories = ['vipboxen', 'appetizers', 'nigiri', 'hosomaki', 'softshellrolls', 'temakihandroll', 'uramaki', 'outsidecrispyrolls', 'friedcrispyrolls', 'pokebowl', 'sashimi', 'dranken'];
 

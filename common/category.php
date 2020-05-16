@@ -29,5 +29,7 @@
         } else {
             $category = "'vipboxen'";
         }
+    } else {
+        $category = "'vipboxen'";
     }
 ?>

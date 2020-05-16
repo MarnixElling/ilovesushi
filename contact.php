@@ -14,6 +14,6 @@
 
     $home = '';
     $order = '';
-    $about = 'active-page';
-    $contact = '';
+    $about = '';
+    $contact = 'active-page';
     ?>

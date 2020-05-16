@@ -62,10 +62,10 @@ if($curdate == $monday || $curdate == $tuesday || $curdate == $wednesday) { // K
         <div class="col-lg-4 col-md-4">
             <nav>
                 <ul>
-                    <li class="<?php echo $home ?>">home</li>
-                    <li class="<?php echo $order ?>">bestellen</li>
-                    <li class="<?php echo $about ?>">over ons</li>
-                    <li class="<?php echo $contact ?>">contact</li>
+                    <li class="home <?php echo $home ?>">home</li>
+                    <li class="order <?php echo $order ?>">bestellen</li>
+                    <li class="about <?php echo $about ?>">over ons</li>
+                    <li class="contact <?php echo $contact ?>">contact</li>
                 </ul>
             </nav>
         </div>
