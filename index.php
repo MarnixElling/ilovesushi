@@ -27,7 +27,7 @@
         <div class="row header">
             <?php require('header.php'); ?>
         </div>
-        <div class="row content-top">
+        <div class="row content-top scroll">
             <div class="col-lg-2 col-md-2">
                 <!-- leftside -->
             </div>
@@ -43,8 +43,8 @@
             </div>
         </div>
         <div class="row content-middle">
-            <div class="col-lg-2 col-md-2"></div>
-            <div class="col-lg-1 col-md-1">
+            <div class="col-lg-2 col-md-2 scroll3"></div>
+            <div class="col-lg-1 col-md-1 scroll2">
                 <?php
                 $categories = ['vipboxen', 'appetizers', 'nigiri', 'hosomaki', 'softshellrolls', 'temakihandroll', 'uramaki', 'outsidecrispyrolls', 'friedcrispyrolls', 'pokebowl', 'sashimi', 'dranken'];
 
@@ -106,14 +106,17 @@
                 }
                 ?>
             </div>
-            <div class="colg-lg-2 col-md-2 cart">
+            <div class="colg-lg-2 col-md-2 cart scroll4">
                 <?php require('common/cart.php'); ?>
                 <button onclick="window.location.href = 'checkout.php';" class="proceed-checkout">Afrekenen</button>
             </div>
         </div>
-        <?php
-        require('footer.php');
-        $conn->close(); ?>
+        <div class="row">
+            <?php 
+            require('footer.php');
+            $conn->close(); 
+            ?>
+        </div>
     </div>
     <!-- LINKS START -->
     <?php require('common/scripts.php'); ?>

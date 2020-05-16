@@ -111,8 +111,26 @@ body {
             font-size: 20px;
             margin-top: 30px;
             margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        .fixed {
+            background-color: #000000a6;
+            position: fixed;
+            top: -30px;
+            width: 100%;
+            z-index: 2;
+            height: 85px;
+            padding-top: 25px;
         }
         .content-middle {
+            .fixed2 {
+                position: fixed;
+                top: 100px;
+                left: 16.75%;
+            }
+            .fixed3 {
+                margin-left: 8.5%;
+            }
             ul {
                 @extend %lst;
                 @extend %space;
@@ -249,6 +267,11 @@ body {
                     color: $w;
                     margin-top: 15px;
                 }
+            }
+            .fixed4 {
+                position: fixed;
+                top: 100px;
+                left: 67%;
             }
         }
     }
