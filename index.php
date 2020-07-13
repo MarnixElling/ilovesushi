@@ -67,13 +67,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2">
-                <!-- rightside -->
+            <div class="colg-lg-2 col-md-2 cart scroll4">
+                <?php require('common/cart.php'); ?>
+                <button onclick="window.location.href = 'checkout.php';" class="proceed-checkout">Afrekenen</button>
             </div>
         </div>
-        <?php
-        require('footer.php');
-        $conn->close(); ?>
+        <div class="row">
+            <?php 
+            require('footer.php');
+            $conn->close(); 
+            ?>
+        </div>
     </div>
     <!-- LINKS START -->
     <?php require('common/scripts.php'); ?>
