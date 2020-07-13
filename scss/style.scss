@@ -116,11 +116,55 @@ body {
                 }
             }
         }
-        .inactive-page {
-            display: none !important;
+        .featured {
+
         }
-        .order-page {
-            display: none;
+        .welcome {
+            width: 100%;
+            hr {
+                border-color: $gr;
+                margin-bottom: 50px;
+            }
+            .welcome-info {
+                background-color: $dg;
+                width: 100%;
+                height: 300px;
+                padding: 30px;
+                .welcome-options {
+                    .menu {
+                        &:hover {
+                            cursor: pointer;
+                            .welcome-button {
+                                background-color: $dr;
+                            }
+                        }
+                    }
+                    .row {
+                        margin-top: 10px;
+                    }
+                    .welcome-button {
+                        background-color: $r;
+                        color: $w;
+                        padding: 15px;
+                        font-size: 20px;
+                        width: 70%;
+                        transition: all 0.3s ease;
+                    }
+                    .welcome-button-icon {
+                        background-color: $dr;
+                        font-size: 20px;
+                        width: 20%;
+                    }
+                }
+                img {
+                    width:  90%;
+                    margin-top: -53px;
+                    position: absolute;
+                }
+                .corona {
+                    margin-top: 20px;
+                }
+            }
         }
         .content-top {
             @extend %uc;

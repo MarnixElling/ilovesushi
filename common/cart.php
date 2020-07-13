@@ -19,9 +19,9 @@
                 <td>€ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
                 <?php
                 if ($curpage == 'index') {
-                    ?> <td><a href="index.php?actionhome=delete&id=<?php echo $values["item_id"]; ?>"><i class="fas fa-times"></i></a></td> <?php
+                    ?> <td><a href="order.php?actionhome=delete&id=<?php echo $values["item_id"]; ?>"><i class="fas fa-times"></i></a></td> <?php
                 } else {
-                    ?> <td><a href="index.php?actionorder=delete&id=<?php echo $values["item_id"]; ?>"><i class="fas fa-times"></i></a></td> <?php
+                    ?> <td><a href="checkout.php?actionorder=delete&id=<?php echo $values["item_id"]; ?>"><i class="fas fa-times"></i></a></td> <?php
                 }
                 ?>
                 

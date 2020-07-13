@@ -35,6 +35,7 @@ if($curdate == $monday || $curdate == $tuesday || $curdate == $wednesday) { // K
     }
 }
 ?>
+<!-- TIJDELIJK VANWEGE CORONA --><div style="text-align: center;" class="col-lg-12 col-md-12 alert alert-danger corona">I.V.M. CORONA(COVID-19) KUNNEN WIJ MOMENTEEL ALLEEN BEZORGEN.</div>
 <header class="col-lg-12 col-md-12">
     <div class="row header-top">
         <div class="col-lg-2 col-md-2"></div>
